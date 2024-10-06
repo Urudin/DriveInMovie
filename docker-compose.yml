@@ -1,0 +1,58 @@
+services:
+  # Laravel Container
+  laravel-src:
+    image: php:8.2-apache
+    container_name: laravel-app
+    restart: unless-stopped
+    working_dir: /var/www/html
+    user: "www-data"
+    volumes:
+      - ./laravel-src:/var/www/html
+      - ./shared_images:/var/www/html/public/shared_images
+    environment:
+      - DB_HOST=mariadb
+      - DB_PORT=3306
+      - DB_DATABASE=laravel_db
+      - DB_USERNAME=root
+      - DB_PASSWORD=root_password
+    ports:
+      - "8000:80"  # Expose port 80 from container to 8000 on localhost
+    networks:
+      - app-network
+
+  # MariaDB Container
+  mariadb:
+    image: mariadb:latest
+    container_name: mariadb
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: laravel_db
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root_password
+    volumes:
+      - mariadb_data:/var/lib/mysql
+    networks:
+      - app-network
+
+  # React Container
+  react-src:
+    image: node:20
+    container_name: react-app
+    restart: unless-stopped
+    working_dir: /usr/src/app
+    volumes:
+      - ./react-src:/usr/src/app
+      - ./shared_images:/usr/src/app/public/shared_images
+    ports:
+      - "3000:3000"  # Expose port 3000 from container to 3000 on localhost
+    command: "npm start"
+    networks:
+      - app-network
+
+volumes:
+  mariadb_data:
+
+networks:
+  app-network:
+    driver: bridge

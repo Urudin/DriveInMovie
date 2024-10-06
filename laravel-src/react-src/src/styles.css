@@ -1,0 +1,402 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Typography */
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+  background-color: #121212;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header Styles */
+.header {
+  margin-top: 50px;
+}
+
+/* Movies Grid Styles */
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 250px);
+  gap: 2rem 2rem;
+  padding: 1rem;
+  justify-content: center;
+}
+
+/* Movie Card Styles */
+.movie-card {
+  background-color: #272727;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out;
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, .5);
+}
+
+.movie-card:hover {
+  transform: scale(1.03);
+}
+
+.movie-card img {
+  width: 250px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  object-position: center;
+}
+
+.movie-card-info {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.movie-card-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.movie-card-rating {
+  font-size: 0.9rem;
+  font-weight: bold;
+  background:#141414;
+  padding: 3px 10px;
+  margin: 0 auto;
+  width: 50px;
+  border-radius: 50px;
+}
+
+.movie-card-genre {
+  font-size: 0.9rem;
+  margin-right: 10px;
+}
+
+
+/* Footer Styles */
+.footer {
+  margin-top: 100px;
+  background-color: #2c2c2c;
+  padding: 1rem;
+  text-align: center;
+}
+
+.footer-text {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+}
+
+.title {
+  text-align: center;
+  margin: 25px 0;
+}
+
+.logo {
+  width: 100%;
+  max-width: 920px;
+  margin: 0 auto;
+  display: block;
+}
+
+.app-subtitle {
+  text-align: center;
+  margin: 25px auto;
+  font-weight: 300;
+}
+
+nav {
+  margin-top: 50px;
+  margin-bottom: 25px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.defaultList {
+    list-style-type: none;
+    /*padding: 10px 0;*/
+    margin: 0;
+    display: block;
+    justify-content: center;
+}
+
+ul li {
+  padding: 10px;
+}
+
+nav a {
+  color:black;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 50px;
+  background-color: #ffffff;
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, .5);
+}
+
+nav a:hover {
+  background-color: #E7F2F1;
+  color: black;
+}
+
+.switch {
+  margin: 20px auto;
+  position: relative;
+  display: inline-block;
+  width: 150px; /* Width large enough to fit the label text */
+  height: 24px; /* Adjust height as needed */
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.movie-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    /*background-color: #f9f9f9;*/
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+input[type="text"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+input[type="file"] {
+    border: none;
+    background: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+}
+
+.submit-btn {
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+}
+
+.link-card {
+    color: #fff;
+    background-color: #333;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.movie-details {
+    display: flex;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.movie-details img {
+    width: 300px;
+    height: auto;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.movie-details-info {
+    flex: 1;
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+}
+
+.movie-details-title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.movie-details-description {
+    margin-top: 1rem;
+}
+
+.movie-details-info p {
+    margin-bottom: 0.5rem;
+}
+
+.projection-section {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #1d1d1d;
+    border-radius: 8px;
+}
+
+.projection-list {
+    margin-top: 20px;
+}
+
+.projection-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #333;
+}
+
+.projection-item p {
+    margin: 0;
+}
+
+.delete-btn {
+    padding: 8px 12px;
+    background-color: #d9534f;
+    margin-left: 5px;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.delete-btn:hover {
+    background-color: #c9302c;
+}
+
+.add-projection-form {
+    margin-top: 20px;
+}
+
+.add-projection-form input[type="datetime-local"],
+.add-projection-form input[type="number"] {
+    width: calc(50% - 10px);
+    margin-right: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.add-projection-form .submit-btn {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.add-projection-form .submit-btn:hover {
+    background-color: #0056b3;
+}
+
+.projection-section {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #1d1d1d;
+    border-radius: 8px;
+}
+
+.projection-table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+.projection-table th, .projection-table td {
+    padding: 12px;
+    border-bottom: 1px solid #333;
+    text-align: left;
+}
+
+.projection-table th {
+    background-color: #2c2c2c;
+    color: #fff;
+}
+
+.add-projection-form {
+    margin-top: 20px;
+}
+
+.add-projection-form input[type="datetime-local"],
+.add-projection-form input[type="number"] {
+    width: calc(50% - 10px);
+    margin-right: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.add-projection-form .submit-btn {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.add-projection-form .submit-btn:hover {
+    background-color: #0056b3;
+}
+
+.button-link {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.button-link:hover {
+    background-color: #0056b3;
+}
+
+.d-none {
+    display: none;
+}
